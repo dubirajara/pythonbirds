@@ -10,9 +10,13 @@ class Pessoa:
 
 if __name__ == '__main__':
     joselito = Pessoa(nome='Jose')
-    dalia = Pessoa(nome='Dalia')
-    diego = Pessoa(joselito, dalia, nome='Diego')
-    print(diego.cumprimentar())
-    print(diego.nome, diego.idade)
-    for filho in diego.filhos:
+    renzo = Pessoa(nome='Renzo')
+    luciano = Pessoa(joselito, renzo, nome='Luciano')
+    print(luciano.cumprimentar())
+    print(luciano.nome, luciano.idade, luciano.filhos)
+    for filho in luciano.filhos:
         print(filho.nome)
+    luciano.sobrenome = 'Ramalho'
+    del luciano.filhos
+    print(luciano.__dict__)
+    print(renzo.__dict__)
